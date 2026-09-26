@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}
+Login — PocketSmart AI
+{% endblock %}
+
+
+{% block content %}
+
+<div class="auth-wrap">
+
+    <form
+        class="auth-card"
+        id="loginForm"
+    >
+
+        <span class="eyebrow">
+            WELCOME BACK
+        </span>
+
+        <h1>
+            Login
+        </h1>
+
+        <p>
+            Continue with your saved plans.
+        </p>
+
+
+        <label>
+            Email
+
+            <input
+                type="email"
+                name="email"
+                required
+            >
+
+        </label>
+
+
+        <label>
+            Password
+
+            <input
+                type="password"
+                name="password"
+                required
+            >
+
+        </label>
+
+
+        <button
+            class="btn primary full"
+        >
+            Login
+        </button>
+
+
+        <div
+            id="formMessage"
+            class="message"
+        ></div>
+
+
+        <p class="center">
+
+            New here?
+
+            <a href="/register">
+                Create an account
+            </a>
+
+        </p>
+
+    </form>
+
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script>
+
+bindAuthForm(
+    'loginForm',
+    '/login'
+);
+
+</script>
+
+{% endblock %}

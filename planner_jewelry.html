@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}Jewelry Planner — PocketSmart AI{% endblock %}
+
+{% block content %}
+
+<section class="planner-page">
+
+    <div class="planner-header">
+        <span class="eyebrow">JEWELRY PLANNER</span>
+
+        <h1>Find the perfect jewelry for your occasion.</h1>
+
+        <p>
+            Tell us your budget, occasion and style.
+            PocketSmart AI will create a personalized jewelry plan.
+        </p>
+    </div>
+
+    <form id="jewelryForm" class="planner-card">
+
+        <label>
+            Budget
+            <input
+                type="number"
+                name="budget"
+                placeholder="Enter your budget"
+                min="1"
+                required
+            >
+        </label>
+
+        <label>
+            Occasion
+            <input
+                type="text"
+                name="occasion"
+                placeholder="Wedding, Birthday, Engagement..."
+                required
+            >
+        </label>
+
+        <label>
+            Style
+            <select name="style">
+                <option value="Elegant">Elegant</option>
+                <option value="Traditional">Traditional</option>
+                <option value="Modern">Modern</option>
+                <option value="Minimal">Minimal</option>
+            </select>
+        </label>
+
+        <label>
+            Outfit Color
+            <input
+                type="text"
+                name="outfit_color"
+                placeholder="Example: Pink"
+            >
+        </label>
+
+        <label>
+            Outfit Description
+            <textarea
+                name="outfit_description"
+                placeholder="Describe your outfit..."
+            ></textarea>
+        </label>
+
+        <label>
+            Outfit Image
+            <input
+                type="file"
+                name="outfit_image"
+                accept="image/*"
+            >
+        </label>
+
+        <button
+            type="submit"
+            class="btn primary full"
+        >
+            Generate Jewelry Plan
+        </button>
+
+        <div
+            id="jewelryResult"
+            class="result-box"
+        ></div>
+
+    </form>
+
+</section>
+
+{% endblock %}

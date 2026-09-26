@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}
+Recommendation History
+{% endblock %}
+
+
+{% block content %}
+
+<section class="section">
+
+    <span class="eyebrow">
+        HISTORY
+    </span>
+
+    <h1>
+        Your saved recommendation plans
+    </h1>
+
+    <p>
+        Plans are saved when you are logged in.
+    </p>
+
+
+    <div
+        id="historyList"
+        class="history-list"
+    >
+
+        <div class="panel">
+            Loading…
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script>
+
+loadHistory();
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+
+{% block title %}
+Party Planner
+{% endblock %}
+
+
+{% block content %}
+
+<section class="planner">
+
+    <div class="planner-intro">
+
+        <span class="eyebrow">
+            PARTY BUDGET PLANNER
+        </span>
+
+        <h1>
+            Plan the celebration,
+            then make every rupee count.
+        </h1>
+
+        <p>
+            Food, decoration,
+            entertainment, gifts and
+            venue-aware suggestions.
+        </p>
+
+    </div>
+
+
+    <form
+        class="planner-form"
+        id="partyForm"
+    >
+
+        <div class="two">
+
+            <label>
+
+                Total Budget (₹)
+
+                <input
+                    type="number"
+                    name="budget"
+                    min="1"
+                    required
+                    placeholder="25000"
+                >
+
+            </label>
+
+
+            <label>
+
+                Guests
+
+                <input
+                    type="number"
+                    name="guests"
+                    min="1"
+                    required
+                    placeholder="30"
+                >
+
+            </label>
+
+        </div>
+
+
+        <div class="two">
+
+            <label>
+
+                Event Type
+
+                <select name="event_type">
+
+                    <option>
+                        Birthday
+                    </option>
+
+                    <option>
+                        Wedding
+                    </option>
+
+                    <option>
+                        Engagement
+                    </option>
+
+                    <option>
+                        Anniversary
+                    </option>
+
+                    <option>
+                        College Event
+                    </option>
+
+                    <option>
+                        Corporate Event
+                    </option>
+
+                </select>
+
+            </label>
+
+
+            <label>
+
+                Theme
+
+                <select name="theme">
+
+                    <option>
+                        Elegant
+                    </option>
+
+                    <option>
+                        Pastel
+                    </option>
+
+                    <option>
+                        Traditional
+                    </option>
+
+                    <option>
+                        Fun & Colorful
+                    </option>
+
+                    <option>
+                        Minimal
+                    </option>
+
+                </select>
+
+            </label>
+
+        </div>
+
+
+        <label>
+
+            Venue / preference
+
+            <input
+                name="venue"
+                placeholder="Home / Banquet hall / Outdoor"
+            >
+
+        </label>
+
+
+        <label>
+
+            Location
+
+            <input
+                name="location"
+                value="India"
+            >
+
+        </label>
+
+
+        <button
+            class="btn primary full"
+        >
+            Generate Party Plan
+        </button>
+
+
+        <div
+            class="loading"
+            id="loading"
+        >
+            Creating your plan…
+        </div>
+
+    </form>
+
+</section>
+
+
+<section
+    class="results section"
+    id="results"
+></section>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script>
+
+bindPartyPlanner();
+
+</script>
+
+{% endblock %}
